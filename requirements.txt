@@ -1,3 +1,2 @@
-Python
-Streamlit
+streamlit
 openai
