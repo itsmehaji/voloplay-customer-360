@@ -113,48 +113,37 @@ st.title("🌐 Unified Customer Intelligence View")
 st.markdown("<p class='subtitle'>Automated multi-agent synthesis of cross-platform customer telemetry.</p>", unsafe_allow_html=True)
 
 crm_data = {
-    "source": "Zoho CRM",
-    "account_name": "Grand Horizon Hotels & Resorts",
-    "mrr": "$125,000",
-    "tier": "Global Enterprise (50+ Properties)",
-    "renewal_date": "2026-08-28 (45 Days)",
-    "active_products": ["Hospitality Analytics Engine", "Dynamic Pricing API", "Central Reservations Sync"],
-    "account_health_score": "42/100 (Critical Drop)",
-    "key_stakeholders": [
-        {"name": "Marcus Vance", "role": "VP of Revenue Management", "sentiment": "Detractor"},
-        {"name": "Elena Rostova", "role": "Chief Operating Officer", "sentiment": "Neutral"}
-    ]
+    "source": "HubSpot CRM",
+    "account_name": "TechFlow Solutions",
+    "monthly_card_spend": "$250,000",
+    "subscription_tier": "Pro (Corporate Cards & Bill Pay)",
+    "renewal_date": "2026-08-15",
+    "key_contact": "Sarah Jenkins (CFO)",
+    "health_score": "Yellow"
 }
 
 support_data = {
-    "source": "Support System",
+    "source": "Zendesk Support",
     "recent_tickets": [
         {
-            "ticket_id": "INC-00192",
-            "status": "SLA BREACHED",
-            "priority": "P0 - System Outage",
-            "issue": "Real-time occupancy sync failing across 12 resort locations. Dynamic pricing API cannot pull live inventory.",
-            "dev_notes": "Root cause identified as a rate-limiting conflict with their legacy Property Management System (PMS). We need their IT to whitelist our new routing endpoints."
-        },
-        {
-            "ticket_id": "TSK-11405",
-            "status": "Open",
-            "priority": "High",
-            "issue": "Data discrepancy: Revenue forecasting dashboard showing 4% variance compared to internal audits."
+            "ticket_id": "TK-8892",
+            "status": "Escalated",
+            "priority": "Urgent",
+            "issue": "NetSuite integration failing. 400+ expenses stuck in pending.",
+            "dev_notes": "API token expired on the client side, but they lack the admin rights in NetSuite to refresh it."
         }
     ]
 }
 
 slack_data = {
     "source": "Internal Slack",
-    "channel": "#ent-grandhorizon-warroom",
+    "channel": "#cs-techflow-vip",
     "thread": [
-        {"user": "@csm_alex", "message": "Marcus just called me screaming. The occupancy sync failure is costing them thousands in missed dynamic pricing surges this weekend. He's threatening to block the $1.5M annual renewal."},
-        {"user": "@sales_director", "message": "DO NOT let this churn. I have backchannel intel from procurement. Grand Horizon is in late-stage acquisition talks with a massive global hospitality group. If we secure this renewal, we have a foot in the door to pitch the parent company for a $10M+ contract."},
-        {"user": "@tech_lead", "message": "I can't fix the sync until their IT team applies the patch, but Marcus keeps escalating to our CEO instead of letting his engineers work with us."}
+        {"user": "@cs_manager", "message": "Sarah just emailed. They are doing month-end close and the NetSuite sync failure is blocking their whole finance team."},
+        {"user": "@sales_rep", "message": "This is bad timing. I saw Sarah checking out a competitor's pricing page on my last G2 intent report. If we ruin their month-end close, they will churn."},
+        {"user": "@support_tech", "message": "I can manually push the CSV export for them today, but we need their NetSuite Admin on a call tomorrow to fix the token."}
     ]
 }
-
 st.markdown("## 📊 Active Data Streams")
 col1, col2, col3 = st.columns(3)
 
